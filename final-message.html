@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Placeholder</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff3d6;
+}
+
+.placeholder-wrap {
+  position: relative;
+  width: min(90vw, 460px);
+  height: min(90vw, 460px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.curved-text-top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(72vw, 320px);
+  height: min(72vw, 320px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.curved-text-top text {
+  fill: #26324a;
+  font: 700 1.2rem/1.2 Arial, sans-serif;
+  letter-spacing: .02em;
+}
+
+.curved-text-bottom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(72vw, 320px);
+  height: min(72vw, 320px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.curved-text-bottom text {
+  fill: #26324a;
+  font: 700 1.2rem/1.2 Arial, sans-serif;
+  letter-spacing: .02em;
+}
+
+.text-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
+  width: min(90vw, 400px);
+  text-align: center;
+}
+
+.text-content p {
+  fill: #26324a;
+  margin: 0.8rem 0;
+  font: 700 1.05rem/1.2 Arial, sans-serif;
+  letter-spacing: .02em;
+  color: #26324a;
+}
+
+.image-placeholder {
+  width: min(72vw, 320px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 6px dashed #26324a;
+  background: #fffdf7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #26324a;
+  font: 700 1rem/1.3 Arial, sans-serif;
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+</head>
+<body>
+  <div class="placeholder-wrap">
+    <svg class="curved-text-top" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <path id="top-curve" d="M -16 160 A 176 176 0 0 1 336 160" />
+      </defs>
+      <text>
+        <textPath href="#top-curve" startOffset="50%" text-anchor="middle">
+          Sorry for not arranging any physical gift
+        </textPath>
+      </text>
+    </svg>
+    
+    <div class="image-placeholder">
+      <img src="Picture.jpg" alt="A special memory">
+    </div>
+    
+    <svg class="curved-text-bottom" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <path id="bottom-curve" d="M -16 160 A 176 176 0 0 0 336 160" />
+      </defs>
+      <text>
+        <textPath href="#bottom-curve" startOffset="50%" text-anchor="middle">
+          But I tried something new
+        </textPath>
+      </text>
+    </svg>
+  </div>
+</body>
+</html>

@@ -108,7 +108,7 @@ h1{
 .btn{
   font-family:'Baloo 2',cursive;font-weight:700;font-size:1.05rem;
   padding:.75rem 1.6rem;border-radius:16px;border:4px solid var(--ink);
-  cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;text-decoration:none;color:var(--ink);
+  cursor:pointer;transition:left .35s ease-in-out, top .35s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;text-decoration:none;color:var(--ink);
   display:inline-block; white-space:nowrap;
   box-shadow:0 5px 0 var(--ink);
 }
@@ -116,6 +116,7 @@ h1{
 .yes:hover{transform:translateY(-3px);box-shadow:0 8px 0 var(--ink);}
 .yes:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ink);}
 .no{background:#fff;}
+.no{transition:left .38s cubic-bezier(.22,1,.36,1), top .38s cubic-bezier(.22,1,.36,1), transform .3s ease-in-out, box-shadow .3s ease-in-out;}
 footer.note{margin-top:1.2rem;font-family:'Caveat',cursive;font-weight:700;font-size:1.15rem;color:var(--octopus-dark);}
 </style>
 </head>
@@ -173,12 +174,55 @@ footer.note{margin-top:1.2rem;font-family:'Caveat',cursive;font-weight:700;font-
   function randomPos(){
     const rowRect = btnRow.getBoundingClientRect();
     const btnRect = noBtn.getBoundingClientRect();
+    const yesRect = yesBtn.getBoundingClientRect();
+
+    const gap = 22;
     const maxX = Math.max(rowRect.width - btnRect.width, 0);
     const maxY = Math.max(rowRect.height - btnRect.height, 0);
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-    noBtn.style.left = x + 'px';
-    noBtn.style.top = y + 'px';
+
+    // Keep the No button away from the Yes button, but choose from
+    // the whole available area so every dodge feels less predictable.
+    const yesLeft = yesRect.left - rowRect.left;
+    const yesRight = yesRect.right - rowRect.left;
+    const yesTop = yesRect.top - rowRect.top;
+    const yesBottom = yesRect.bottom - rowRect.top;
+
+    let candidates = [];
+    for(let i = 0; i < 40; i++){
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      const overlapsYes =
+        x < yesRight + gap &&
+        x + btnRect.width > yesLeft - gap &&
+        y < yesBottom + gap &&
+        y + btnRect.height > yesTop - gap;
+
+      if(!overlapsYes){
+        candidates.push({x, y});
+      }
+    }
+
+    // Prefer a position that is reasonably far from the previous one.
+    const currentX = parseFloat(noBtn.style.left) || 0;
+    const currentY = parseFloat(noBtn.style.top) || 0;
+
+    if(candidates.length){
+      candidates.sort((a, b) => {
+        const da = Math.hypot(a.x - currentX, a.y - currentY);
+        const db = Math.hypot(b.x - currentX, b.y - currentY);
+        return db - da;
+      });
+
+      // Pick randomly from the best few instead of always taking the farthest.
+      const pool = candidates.slice(0, Math.min(8, candidates.length));
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      noBtn.style.left = pick.x + 'px';
+      noBtn.style.top = pick.y + 'px';
+    } else {
+      noBtn.style.left = Math.random() * maxX + 'px';
+      noBtn.style.top = Math.random() * maxY + 'px';
+    }
   }
 
   function startDodge(){
@@ -225,7 +269,7 @@ footer.note{margin-top:1.2rem;font-family:'Caveat',cursive;font-weight:700;font-
     bubble.textContent = msgs[Math.min(attempts-1, msgs.length-1)];
     if(!dodging){ startDodge(); } else { randomPos(); }
     if(attempts >= 4){
-      noBtn.style.transition = 'opacity .5s ease, transform .5s ease';
+      noBtn.style.transition = 'left .38s cubic-bezier(.22,1,.36,1), top .38s cubic-bezier(.22,1,.36,1), opacity .5s ease, transform .5s ease';
       noBtn.style.opacity = '0';
       noBtn.style.transform = 'scale(0)';
       setTimeout(function(){
@@ -247,6 +291,7 @@ footer.note{margin-top:1.2rem;font-family:'Caveat',cursive;font-weight:700;font-
 
   noBtn.addEventListener('click', function(e){ e.preventDefault(); reactNo(); });
   noBtn.addEventListener('mouseenter', function(){ if(dodging) randomPos(); });
+  noBtn.addEventListener('mousemove', function(){ if(dodging) randomPos(); });
   noBtn.addEventListener('touchstart', function(e){ if(dodging){ e.preventDefault(); randomPos(); } }, {passive:false});
 })();
 </script>

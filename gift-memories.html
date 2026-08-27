@@ -56,6 +56,13 @@ h1{font-family:'Baloo 2',cursive;font-weight:800;font-size:1.9rem;margin:.1rem 0
   box-shadow:0 4px 0 var(--ink); transition:transform .15s ease, box-shadow .15s ease;
 }
 .back:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink);}
+@media (max-width:600px){
+  body{align-items:flex-start;padding:1.25rem .75rem;}
+  h1{font-size:clamp(1.45rem,7vw,1.9rem);}
+  .sub{font-size:1.15rem;margin-bottom:1.1rem;}
+  .grid{grid-template-columns:1fr;gap:1rem;}
+  .frame{width:min(100%,340px);justify-self:center;}
+}
 </style>
 </head>
 <body>

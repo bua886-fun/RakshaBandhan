@@ -118,6 +118,20 @@ h1{
 .no{background:#fff;}
 .no{transition:left .38s cubic-bezier(.22,1,.36,1), top .38s cubic-bezier(.22,1,.36,1), transform .3s ease-in-out, box-shadow .3s ease-in-out;}
 footer.note{margin-top:1.2rem;font-family:'Caveat',cursive;font-weight:700;font-size:1.15rem;color:var(--octopus-dark);}
+@media (max-width:600px){
+  body{overflow:auto;align-items:flex-start;padding:.75rem;}
+  .card{padding:1.6rem 1rem 1.4rem;}
+  h1{font-size:clamp(1.45rem,7vw,1.85rem);}
+  .bubble{max-width:100%;}
+  .question{font-size:1rem;}
+  .btn{font-size:.95rem;padding:.6rem 1.1rem;}
+}
+@media (max-width:380px){
+  .mascot{width:95px;height:84px;}
+  .bubble{font-size:1.1rem;}
+  .btnRow{gap:.6rem;}
+  .btn{font-size:.88rem;padding:.55rem .85rem;}
+}
 </style>
 </head>
 <body>

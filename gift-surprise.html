@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<title>??? · For Anaa</title>
+<style>
+:root{
+  --sky:#FFF3D6;
+  --octopus:#4F8FE0;
+  --octopus-dark:#3B6FBD;
+  --gold:#F7B733;
+  --coral:#F0654B;
+  --leaf:#63B389;
+  --ink:#26324A;
+  --card:#FFFDF7;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--sky);
+  font-family:'Baloo 2', cursive;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 1rem;
+  text-align:center;
+}
+.card{
+  max-width:460px;width:100%;
+  background:var(--card);
+  border:5px solid var(--ink);
+  border-radius:30px;
+  padding:2.4rem 2rem;
+  box-shadow:0 10px 0 var(--ink);
+}
+.mascot-scene{
+  position:relative;
+  width:min(100%, 390px);
+  height:260px;
+  margin:.35rem auto .8rem;
+}
+.mascot{width:150px;height:130px;position:absolute;left:50%;top:50%;transform:translate(-50%,-46%);}
+.mascot video{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;}
+.mascot canvas{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
+.tag{
+  position:absolute;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:30px;
+  padding:.18rem .62rem;
+  border:3px solid var(--ink);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 4px 0 var(--ink);
+  color:var(--ink);
+  font-size:.72rem;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+}
+.tag.support{left:5%;top:14%;background:#FFECA8;transform:rotate(-6deg);}
+.tag.partner{right:2%;top:11%;background:#A7E4FF;transform:rotate(5deg);}
+.tag.agony{left:2%;bottom:20%;background:#FFD0DE;transform:rotate(4deg);}
+.tag.sarcasm{right:3%;bottom:24%;background:#CFF2D9;transform:rotate(-5deg);}
+.tag.overthinker{left:50%;bottom:2%;background:#E4D9FF;transform:translateX(-50%) rotate(2deg);}
+.swirls{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+.swirls > path{
+  fill:none;
+  stroke:var(--coral);
+  stroke-width:5.5;
+  stroke-dasharray:10 8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  filter:drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);
+}
+.swirls > path:nth-of-type(2n){stroke:var(--octopus);}
+.swirls > path:nth-of-type(3n){stroke:var(--leaf);}
+.eyebrow{
+  font-family:'Baloo 2',cursive;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  color:#fff;background:var(--octopus);border:3px solid var(--ink);border-radius:50px;
+  display:inline-block;padding:.2rem 1rem;font-size:.72rem;
+}
+h1{font-family:'Baloo 2',cursive;font-weight:800;font-size:1.65rem;margin:.5rem 0 .8rem;color:var(--coral);}
+p{font-size:1.05rem;line-height:1.6;}
+.back{
+  display:inline-block;margin-top:1.6rem;text-decoration:none;color:var(--ink);
+  font-family:'Baloo 2',cursive;font-weight:700;font-size:.85rem;letter-spacing:.5px;text-transform:uppercase;
+  border:3px solid var(--ink);border-radius:16px;padding:.6rem 1.3rem;background:#fff;
+  box-shadow:0 4px 0 var(--ink); transition:transform .15s ease, box-shadow .15s ease;
+}
+.back:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink);}
+@media (max-width:380px){
+  .card{padding:2rem .75rem;}
+  .mascot-scene{height:240px;}
+  .tag{font-size:.62rem;padding:.16rem .44rem;border-width:2px;box-shadow:0 3px 0 var(--ink);}
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Gift Box 3</div>
+  <div class="mascot-scene" aria-label="Doraemon with affectionate sibling tags">
+    <span class="tag support">BestSupport</span>
+    <span class="tag partner">PartnerInCrime</span>
+    <span class="tag agony">AgonyAunt</span>
+    <span class="tag sarcasm">SarcasmDepartment</span>
+    <span class="tag overthinker">OfficialOverthinker</span>
+    <svg class="swirls" viewBox="0 0 390 260" aria-hidden="true">
+      <defs>
+        <marker id="arrow-coral" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#F0654B"></path>
+        </marker>
+        <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#4F8FE0"></path>
+        </marker>
+        <marker id="arrow-leaf" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#63B389"></path>
+        </marker>
+      </defs>
+      <path d="M 92 58 C 118 52, 134 63, 151 84" marker-end="url(#arrow-coral)"></path>
+      <path d="M 298 58 C 272 52, 254 63, 239 84" marker-end="url(#arrow-blue)"></path>
+      <path d="M 82 165 C 108 149, 132 137, 160 127" marker-end="url(#arrow-blue)"></path>
+      <path d="M 300 181 C 273 171, 255 158, 238 145" marker-end="url(#arrow-leaf)"></path>
+      <path d="M 154 224 C 128 206, 124 181, 151 158" marker-end="url(#arrow-coral)"></path>
+    </svg>
+    <div class="mascot" id="mascot">
+      <video src="doraemon.mp4" autoplay muted loop playsinline aria-label="Doraemon surprise"></video>
+      <canvas aria-hidden="true"></canvas>
+    </div>
+  </div>
+  <a class="back" href="rakhi-final.html">&larr; Back to gifts</a>
+</div>
+<script>
+(function(){
+  const video = document.querySelector('#mascot video');
+  const canvas = document.querySelector('#mascot canvas');
+  if(!video || !canvas) return;
+  const context = canvas.getContext('2d', {willReadFrequently:true});
+
+  function renderFrame(){
+    if(video.videoWidth && video.videoHeight){
+      if(canvas.width !== video.videoWidth || canvas.height !== video.videoHeight){
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+      }
+      context.drawImage(video, 0, 0);
+      const frame = context.getImageData(0, 0, canvas.width, canvas.height);
+      const width = canvas.width;
+      const height = canvas.height;
+      const visited = new Uint8Array(width * height);
+      const queue = [];
+      function isBackgroundPixel(index){
+        return Math.max(frame.data[index], frame.data[index + 1], frame.data[index + 2]) < 48;
+      }
+      function addBackgroundPixel(x, y){
+        const pixel = y * width + x;
+        if(!visited[pixel] && isBackgroundPixel(pixel * 4)){
+          visited[pixel] = 1;
+          queue.push(pixel);
+        }
+      }
+      for(let x = 0; x < width; x++){
+        addBackgroundPixel(x, 0);
+        addBackgroundPixel(x, height - 1);
+      }
+      for(let y = 1; y < height - 1; y++){
+        addBackgroundPixel(0, y);
+        addBackgroundPixel(width - 1, y);
+      }
+      for(let position = 0; position < queue.length; position++){
+        const pixel = queue[position];
+        const x = pixel % width;
+        const y = Math.floor(pixel / width);
+        frame.data[pixel * 4 + 3] = 0;
+        if(x > 0) addBackgroundPixel(x - 1, y);
+        if(x < width - 1) addBackgroundPixel(x + 1, y);
+        if(y > 0) addBackgroundPixel(x, y - 1);
+        if(y < height - 1) addBackgroundPixel(x, y + 1);
+      }
+      context.putImageData(frame, 0, 0);
+    }
+    requestAnimationFrame(renderFrame);
+  }
+
+  video.addEventListener('loadeddata', renderFrame, {once:true});
+})();
+</script>
+</body>
+</html>

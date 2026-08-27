@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<title>Rakshabandhan for Anaa · Step 4</title>
+<style>
+:root{
+  --sky:#FFF3D6;
+  --octopus:#4F8FE0;
+  --octopus-dark:#3B6FBD;
+  --gold:#F7B733;
+  --coral:#F0654B;
+  --leaf:#63B389;
+  --ink:#26324A;
+  --card:#FFFDF7;
+}
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--sky);
+  font-family:'Baloo 2', cursive;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+  padding:1rem;
+}
+.skyline{position:absolute;left:0;right:0;bottom:0;height:34%;z-index:0;pointer-events:none;display:flex;align-items:flex-end;justify-content:space-evenly;opacity:.9;}
+.skyline .b{border:4px solid var(--ink);border-bottom:none;border-radius:14px 14px 0 0;}
+.floaties{position:absolute;inset:0;pointer-events:none;z-index:1;}
+.floaties span{
+  position:absolute;
+  font-size:1.9rem;
+  animation:float 6s ease-in-out infinite;
+  opacity:.7;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-18px) rotate(6deg);}
+}
+.card{
+  position:relative;
+  background:var(--card);
+  border:5px solid var(--ink);
+  border-radius:34px;
+  box-shadow:0 10px 0 var(--ink);
+  padding:2.3rem 2rem 2rem;
+  max-width:460px;
+  width:100%;
+  text-align:center;
+  z-index:2;
+}
+.progress{display:flex;gap:8px;justify-content:center;margin-bottom:1rem;}
+.dot{width:13px;height:13px;border-radius:50%;border:3px solid var(--ink);background:#fff;}
+.dot.active{background:var(--gold);}
+.dot.done{background:var(--coral);}
+.eyebrow{
+  font-family:'Baloo 2',cursive;
+  font-weight:700;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  color:#fff;
+  background:var(--octopus);
+  border:3px solid var(--ink);
+  border-radius:50px;
+  display:inline-block;
+  padding:.2rem 1rem;
+  font-size:.72rem;
+  margin-bottom:.7rem;
+}
+h1{
+  font-family:'Baloo 2',cursive;
+  font-weight:800;
+  font-size:1.85rem;
+  margin:.1rem 0 .8rem;
+  color:var(--coral);
+  line-height:1.15;
+}
+.mascot{width:110px;height:96px;margin:0 auto .5rem;position:relative;}
+.mascot img,.mascot video,.mascot canvas{display:block;width:100%;height:100%;object-fit:contain;}
+.mascot video{position:absolute;opacity:0;pointer-events:none;}
+.mascot canvas{position:absolute;inset:0;object-fit:contain;transform:scale(1.6);transform-origin:center;}
+.bubble{
+  position:relative;
+  background:#fff;border:3px solid var(--ink);border-radius:16px;
+  padding:.5rem 1rem;font-family:'Caveat',cursive;font-weight:700;font-size:1.25rem;
+  margin:.4rem auto 1rem; display:inline-block; min-height:1.6rem;
+}
+.bubble::after{
+  content:"";
+  position:absolute;
+  top:-9px;left:50%;
+  width:14px;height:14px;
+  background:#fff;
+  border-left:3px solid var(--ink);
+  border-top:3px solid var(--ink);
+  transform:translateX(-50%) rotate(45deg);
+}
+.question{font-size:1.05rem;font-weight:600;margin-bottom:1.4rem;}
+.btnRow{display:flex;gap:1rem;justify-content:center;align-items:center;position:relative;min-height:64px;}
+.btn{
+  font-family:'Baloo 2',cursive;font-weight:700;font-size:1.05rem;
+  padding:.75rem 1.6rem;border-radius:16px;border:4px solid var(--ink);
+  cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;text-decoration:none;color:var(--ink);
+  display:inline-block; white-space:nowrap;
+  box-shadow:0 5px 0 var(--ink);
+}
+.yes{background:var(--gold);}
+.yes:hover{transform:translateY(-3px);box-shadow:0 8px 0 var(--ink);}
+.yes:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ink);}
+.no{background:#fff;}
+footer.note{margin-top:1.2rem;font-family:'Caveat',cursive;font-weight:700;font-size:1.15rem;color:var(--octopus-dark);}
+</style>
+</head>
+<body>
+<div class="skyline">
+  <div class="b" style="width:11%;height:60%;background:var(--octopus);"></div>
+  <div class="b" style="width:9%;height:38%;background:var(--gold);"></div>
+  <div class="b" style="width:13%;height:74%;background:var(--coral);"></div>
+  <div class="b" style="width:8%;height:30%;background:var(--leaf);"></div>
+  <div class="b" style="width:12%;height:52%;background:var(--octopus-dark);"></div>
+  <div class="b" style="width:9%;height:42%;background:var(--gold);"></div>
+  <div class="b" style="width:11%;height:64%;background:var(--octopus);"></div>
+</div>
+<div class="floaties">
+  <span style="top:8%;left:6%;animation-delay:0s;">🧵</span>
+  <span style="top:15%;left:85%;animation-delay:1s;">🍬</span>
+  <span style="top:70%;left:10%;animation-delay:2s;">💛</span>
+  <span style="top:16%;left:45%;animation-delay:1.5s;">🎁</span>
+  <span style="top:45%;left:92%;animation-delay:.5s;">✨</span>
+  <span style="top:50%;left:3%;animation-delay:2.5s;">🪁</span>
+</div>
+<div class="card">
+  <div class="mascot" id="mascot">
+    <img src="oswald-mascot-transparent.webp" alt="Oswald mascot">
+  </div>
+  <div class="progress"><span class="dot done"></span><span class="dot done"></span><span class="dot done"></span><span class="dot active"></span></div>
+  <div class="eyebrow">Step 4 of 4</div>
+  <h1>Final Question!</h1>
+  <div class="bubble" id="mascotMsg">Deep breaths... this is it, Anaa.</div>
+  <p class="question">Ready to unwrap your actual Rakshabandhan surprise now?</p>
+  <div class="btnRow" id="btnRow">
+    <a class="btn yes" id="yesBtn" href="rakhi-final.html">YES, SHOW ME! 🎁</a>
+    <button class="btn no" id="noBtn" type="button">No</button>
+  </div>
+  <footer class="note">psst... choose wisely 👀</footer>
+</div>
+<script>
+(function(){
+  const noBtn = document.getElementById('noBtn');
+  const yesBtn = document.getElementById('yesBtn');
+  const btnRow = document.getElementById('btnRow');
+  const bubble = document.getElementById('mascotMsg');
+  const mascotEl = document.getElementById('mascot');
+  if(!noBtn) return;
+  let dodging = false;
+  let attempts = 0;
+  let sadMascotShown = false;
+  const msgs = [
+    "Nooo Anaa don't do this to me! 🥺",
+    "Wrong choice, try again na 👉",
+    "I'm not letting you click that one 😤",
+    "Okay okay, No button retiring now 😌"
+  ];
+
+  function randomPos(){
+    const rowRect = btnRow.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+    const maxX = Math.max(rowRect.width - btnRect.width, 0);
+    const maxY = Math.max(rowRect.height - btnRect.height, 0);
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+  }
+
+  function startDodge(){
+    dodging = true;
+    btnRow.style.position = 'relative';
+    noBtn.style.position = 'absolute';
+    randomPos();
+  }
+
+  function showSadMascot(){
+    if(sadMascotShown || !mascotEl) return;
+    sadMascotShown = true;
+    mascotEl.innerHTML = '<video src="sad.mp4" autoplay muted loop playsinline aria-label="Sad Oswald mascot"></video><canvas aria-hidden="true"></canvas>';
+    const video = mascotEl.querySelector('video');
+    const canvas = mascotEl.querySelector('canvas');
+    const context = canvas.getContext('2d', {willReadFrequently:true});
+    video.addEventListener('error', function(){
+      mascotEl.innerHTML = '<img src="oswald-mascot-transparent.webp" alt="Oswald mascot">';
+    }, {once:true});
+    function renderFrame(){
+      if(video.videoWidth && video.videoHeight){
+        if(canvas.width !== video.videoWidth || canvas.height !== video.videoHeight){
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+        }
+        context.drawImage(video, 0, 0);
+        const frame = context.getImageData(0, 0, canvas.width, canvas.height);
+        for(let i = 0; i < frame.data.length; i += 4){
+          const brightness = Math.max(frame.data[i], frame.data[i + 1], frame.data[i + 2]);
+          if(brightness < 48){
+            frame.data[i + 3] = Math.round(brightness * 5.3);
+          }
+        }
+        context.putImageData(frame, 0, 0);
+      }
+      requestAnimationFrame(renderFrame);
+    }
+    video.addEventListener('loadeddata', renderFrame, {once:true});
+  }
+
+  function reactNo(){
+    attempts++;
+    showSadMascot();
+    bubble.textContent = msgs[Math.min(attempts-1, msgs.length-1)];
+    if(!dodging){ startDodge(); } else { randomPos(); }
+    if(attempts >= 4){
+      noBtn.style.transition = 'opacity .5s ease, transform .5s ease';
+      noBtn.style.opacity = '0';
+      noBtn.style.transform = 'scale(0)';
+      setTimeout(function(){
+        noBtn.style.pointerEvents = 'none';
+        noBtn.style.display = 'none';
+      }, 500);
+      bubble.textContent = "Guess that's a YES then! 😌💛";
+    }
+  }
+
+  if(yesBtn){
+    yesBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      const destination = yesBtn.href;
+      bubble.textContent = "Yaaay! 💛 That\'s the spirit! 🎉";
+      setTimeout(function(){ window.location.href = destination; }, 650);
+    });
+  }
+
+  noBtn.addEventListener('click', function(e){ e.preventDefault(); reactNo(); });
+  noBtn.addEventListener('mouseenter', function(){ if(dodging) randomPos(); });
+  noBtn.addEventListener('touchstart', function(e){ if(dodging){ e.preventDefault(); randomPos(); } }, {passive:false});
+})();
+</script>
+</body>
+</html>

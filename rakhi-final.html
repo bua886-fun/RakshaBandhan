@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<title>Happy Rakshabandhan, Anaa!</title>
+<style>
+:root{
+  --sky:#FFF3D6;
+  --octopus:#4F8FE0;
+  --octopus-dark:#3B6FBD;
+  --gold:#F7B733;
+  --coral:#F0654B;
+  --leaf:#63B389;
+  --ink:#26324A;
+  --card:#FFFDF7;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--sky);
+  font-family:'Baloo 2', cursive;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+  padding:1rem;
+}
+.skyline{position:absolute;left:0;right:0;bottom:0;height:34%;z-index:0;pointer-events:none;display:flex;align-items:flex-end;justify-content:space-evenly;opacity:.9;}
+.skyline .b{border:4px solid var(--ink);border-bottom:none;border-radius:14px 14px 0 0;}
+.floaties{position:absolute;inset:0;pointer-events:none;z-index:1;}
+.floaties span{position:absolute;font-size:1.9rem;animation:float 6s ease-in-out infinite;opacity:.7;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-18px) rotate(6deg);}}
+.card{
+  position:relative;
+  background:var(--card);
+  border:5px solid var(--ink);
+  border-radius:34px;
+  box-shadow:0 10px 0 var(--ink);
+  padding:2.3rem 2rem 2rem;
+  max-width:560px;
+  width:100%;
+  text-align:center;
+  z-index:2;
+}
+.eyebrow{
+  font-family:'Baloo 2',cursive;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  color:#fff;background:var(--octopus);border:3px solid var(--ink);border-radius:50px;
+  display:inline-block;padding:.2rem 1rem;font-size:.72rem;margin-bottom:.7rem;
+}
+h1{font-family:'Baloo 2',cursive;font-weight:800;font-size:2rem;margin:.1rem 0 .5rem;color:var(--coral);line-height:1.15;}
+.sub{font-family:'Caveat',cursive;font-weight:700;font-size:1.35rem;color:var(--ink);margin-bottom:1.6rem;}
+.mascot{width:110px;height:96px;margin:0 auto .5rem;position:relative;}
+.mascot img{display:block;width:100%;height:100%;object-fit:contain;}
+.gifts{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem;}
+.giftbox{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:.5rem;width:140px;}
+.box{
+  width:110px;height:100px;border:5px solid var(--ink);border-radius:20px;
+  display:flex;align-items:center;justify-content:center;font-size:2.6rem;
+  transition:transform .2s ease, box-shadow .2s ease;box-shadow:0 6px 0 var(--ink);
+}
+.giftbox:nth-child(1) .box{background:var(--gold);}
+.giftbox:nth-child(2) .box{background:var(--coral);}
+.giftbox:nth-child(3) .box{background:var(--leaf);}
+.giftbox:hover .box{transform:translateY(-6px);box-shadow:0 10px 0 var(--ink);}
+.giftbox span{font-family:'Baloo 2',sans-serif;font-weight:700;text-transform:uppercase;font-size:.82rem;letter-spacing:.5px;}
+footer.note{margin-top:1.6rem;font-family:'Caveat',cursive;font-weight:700;font-size:1.2rem;color:var(--octopus-dark);}
+</style>
+</head>
+<body>
+<div class="skyline">
+  <div class="b" style="width:11%;height:60%;background:var(--octopus);"></div>
+  <div class="b" style="width:9%;height:38%;background:var(--gold);"></div>
+  <div class="b" style="width:13%;height:74%;background:var(--coral);"></div>
+  <div class="b" style="width:8%;height:30%;background:var(--leaf);"></div>
+  <div class="b" style="width:12%;height:52%;background:var(--octopus-dark);"></div>
+  <div class="b" style="width:9%;height:42%;background:var(--gold);"></div>
+  <div class="b" style="width:11%;height:64%;background:var(--octopus);"></div>
+</div>
+<div class="floaties">
+  <span style="top:8%;left:6%;animation-delay:0s;">🎉</span>
+  <span style="top:15%;left:85%;animation-delay:1s;">🧵</span>
+  <span style="top:70%;left:10%;animation-delay:2s;">💛</span>
+  <span style="top:16%;left:45%;animation-delay:1.5s;">✨</span>
+  <span style="top:45%;left:92%;animation-delay:.5s;">🍬</span>
+  <span style="top:50%;left:3%;animation-delay:2.5s;">🎀</span>
+</div>
+<div class="card">
+  <div class="mascot" id="mascot">
+    <img src="oswald-mascot-transparent.webp" alt="Oswald mascot">
+  </div>
+  <div class="eyebrow">You made it!</div>
+  <h1>Happy Rakshabandhan, Anaa!</h1>
+  <p class="sub">Pick a box, any box... your surprise is waiting 🎁</p>
+  <div class="gifts">
+    <a class="giftbox" href="gift-memories.html">
+      <div class="box">🎁</div>
+      <span>Memories</span>
+    </a>
+    <a class="giftbox" href="gift-certificate.html">
+      <div class="box">🎁</div>
+      <span>Certificate</span>
+    </a>
+    <a class="giftbox" href="gift-surprise.html">
+      <div class="box">🎁</div>
+      <span>???</span>
+    </a>
+  </div>
+  <footer class="note">with all my love, your favorite brother 💛</footer>
+</div>
+</body>
+</html>

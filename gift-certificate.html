@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<title>Certificate · For Anaa</title>
+<style>
+:root{
+  --sky:#FFF3D6;
+  --octopus:#4F8FE0;
+  --octopus-dark:#3B6FBD;
+  --gold:#F7B733;
+  --coral:#F0654B;
+  --leaf:#63B389;
+  --ink:#26324A;
+  --card:#FFFDF7;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--sky);
+  font-family:'Baloo 2', cursive;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 1rem;
+}
+.certificate{
+  max-width:640px;width:100%;
+  background:var(--card);
+  border:5px solid var(--ink);
+  border-radius:28px;
+  padding:2.4rem 2rem;
+  text-align:center;
+  position:relative;
+  box-shadow:0 10px 0 var(--ink);
+}
+.certificate::before{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:3px dashed var(--octopus);
+  border-radius:18px;
+  pointer-events:none;
+}
+.seal{font-size:2.6rem;margin-bottom:.4rem;}
+.eyebrow{
+  font-family:'Baloo 2',cursive;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  color:#fff;background:var(--octopus);border:3px solid var(--ink);border-radius:50px;
+  display:inline-block;padding:.2rem 1rem;font-size:.72rem;
+}
+h1{font-family:'Baloo 2',cursive;font-weight:800;font-size:1.85rem;margin:.4rem 0 1.2rem;color:var(--coral);}
+.body-text{font-size:1.05rem;line-height:1.7;margin:0 0 1rem;}
+.name{
+  font-family:'Caveat',cursive;font-weight:700;font-size:2.4rem;color:var(--coral);
+  border-bottom:3px solid var(--ink);display:inline-block;padding:0 .5rem .1rem;margin:.3rem 0 1rem;
+}
+.signoff{font-family:'Caveat',cursive;font-weight:700;font-size:1.4rem;margin-top:1rem;}
+.date-line{font-size:.85rem;color:#8a93a8;margin-top:1.6rem;}
+.back{
+  display:inline-block;margin-top:1.8rem;text-decoration:none;color:var(--ink);
+  font-family:'Baloo 2',cursive;font-weight:700;font-size:.85rem;letter-spacing:.5px;text-transform:uppercase;
+  border:3px solid var(--ink);border-radius:16px;padding:.6rem 1.3rem;background:#fff;
+  box-shadow:0 4px 0 var(--ink); transition:transform .15s ease, box-shadow .15s ease;
+}
+.back:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--ink);}
+</style>
+</head>
+<body>
+<div>
+  <div class="certificate">
+    <div class="seal">🏅</div>
+    <div class="eyebrow">Official Certificate of Awesomeness</div>
+    <h1>Best Sister in the World</h1>
+    <p class="body-text">This certificate is proudly awarded to</p>
+    <div class="name">Aritra Nath (Anaa)</div>
+    <p class="body-text">for outstanding achievements in caring, teasing, spoiling, and putting up with her little brother — every single day of the year, not just on Rakshabandhan.</p>
+    <p class="signoff">with all my heart, your little brother 💛</p>
+    <p class="date-line">Awarded on Rakshabandhan · 2026</p>
+  </div>
+  <div style="text-align:center;">
+    <a class="back" href="rakhi-final.html">&larr; Back to gifts</a>
+  </div>
+</div>
+</body>
+</html>
